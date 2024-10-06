@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import ProjectList from '~/components/widgets/ProjectList.astro';
+import PublicationList from '~/components/widgets/PublicationList.astro';
+
+const metadata = {
+  title: 'My Research',
+  ignoreTitleTemplate: true,
+};
+
+const projects = await getCollection('projects');
+const oldProjects = await getCollection('old-projects');
+const journalArticles = (await getCollection('articles')).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const otherPublications = (await getCollection('other-publications')).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const conferencePresentations = (await getCollection('conferences')).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<Layout metadata={metadata}>
+    <Hero>
+        <Fragment slot="title">
+        { metadata.title }
+        </Fragment>
+    </Hero>
+    <ProjectList projects={ projects } oldprojects={oldProjects} />
+    <PublicationList
+        articles={ journalArticles }
+        otherpublications={ otherPublications } 
+        conferences={ conferencePresentations }
+    />
+</Layout>
