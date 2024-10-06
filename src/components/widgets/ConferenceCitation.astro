@@ -6,8 +6,10 @@ interface Props {
 const { conference } = Astro.props;
 ---
 
-{ conference.data.conference }.
-{conference.data.location},
-{conference.data.meetingdate}.
-<em>{conference.data.title}</em>
-{conference.data.type != undefined ? `[${conference.data.type}]` : ""}
+<div class="prose prose-default max-w-none">
+    { conference.data.conference }.
+    {conference.data.location},
+    {conference.data.meetingdate}.
+    <em>{conference.data.title}</em>
+    {conference.data.type != undefined ? `[${conference.data.type}]` : ""}
+</div>

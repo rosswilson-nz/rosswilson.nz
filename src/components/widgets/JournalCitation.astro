@@ -6,7 +6,9 @@ interface Props {
 const { article } = Astro.props;
 
 ---
-{ article.data.author.join(", ") }.
-{article.data.doi != undefined ? <a href={`https://doi.org/${article.data.doi}`}>{article.data.title}</a>  : <span class="font-medium">{article.data.title}</span>}.
-<em>{article.data.journal}</em>
-{article.data.year};{article.data.volume}{article.data.issue != undefined ? `(${article.data.issue})` : "" }{article.data.pages != undefined ? `:${article.data.pages}` : ""}
+<div class="prose prose-default max-w-none">
+    { article.data.author.join(", ") }.
+    {article.data.doi != undefined ? <a href={`https://doi.org/${article.data.doi}`}>{article.data.title}</a>  : <span class="font-medium">{article.data.title}</span>}.
+    <em>{article.data.journal}</em>
+    {article.data.year};{article.data.volume}{article.data.issue != undefined ? `(${article.data.issue})` : "" }{article.data.pages != undefined ? `:${article.data.pages}` : ""}
+</div>

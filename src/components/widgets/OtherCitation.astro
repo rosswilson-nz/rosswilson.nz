@@ -7,8 +7,10 @@ interface Props {
 const { publication } = Astro.props;
 
 ---
-<em>{publication.data.title}</em>.
-{ publication.data.with != undefined ? <span>With {publication.data.with}.</span> : ""}
-{ publication.data.description != undefined ? <span>{publication.data.description}</span> : ""}
-{ publication.data.published != undefined ? <span>{publication.data.published}.</span> : <span><FormattedDate date={publication.data.date} />.</span>}
-{ publication.data.url != undefined ? <span>Available at <a href={publication.data.url}>{publication.data.url}</a></span> : ""}.
+<div class="prose prose-default max-w-none">
+    <em>{publication.data.title}</em>.
+    { publication.data.with != undefined ? <span>With {publication.data.with}.</span> : ""}
+    { publication.data.description != undefined ? <span>{publication.data.description}</span> : ""}
+    { publication.data.published != undefined ? <span>{publication.data.published}.</span> : <span><FormattedDate date={publication.data.date} />.</span>}
+    { publication.data.url != undefined ? <span>Available at <a href={publication.data.url}>{publication.data.url}</a></span> : ""}.
+</div>
