@@ -17,7 +17,7 @@ module.exports = {
         serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
       },
-      typography: ({theme}) => ({
+      typography: ({ theme }) => ({
         default: {
           css: {
             '--tw-prose-body': theme('colors.default'),
@@ -53,15 +53,15 @@ module.exports = {
             '--tw-prose-invert-th-borders': theme('colors.default'),
             '--tw-prose-invert-td-borders': theme('colors.default'),
             a: {
-              'fontWeight': 'bold',
+              fontWeight: 'bold',
               textDecoration: 'none',
               '&:hover': {
-                textDecoration: 'underline'
-              }
+                textDecoration: 'underline',
+              },
             },
-          }
-        }
-      })
+          },
+        },
+      }),
     },
   },
   plugins: [typographyPlugin],

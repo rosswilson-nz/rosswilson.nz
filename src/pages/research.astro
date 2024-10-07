@@ -14,27 +14,25 @@ const metadata = {
 
 const projects = await getCollection('projects');
 const oldProjects = await getCollection('old-projects');
-const journalArticles = (await getCollection('articles')).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-);
+const journalArticles = (await getCollection('articles')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const otherPublications = (await getCollection('other-publications')).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 const conferencePresentations = (await getCollection('conferences')).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 ---
 
 <Layout metadata={metadata}>
-    <Hero>
-        <Fragment slot="title">
-        { metadata.title }
-        </Fragment>
-    </Hero>
-    <ProjectList projects={ projects } oldprojects={oldProjects} />
-    <PublicationList
-        articles={ journalArticles }
-        otherpublications={ otherPublications } 
-        conferences={ conferencePresentations }
-    />
+  <Hero>
+    <Fragment slot="title">
+      {metadata.title}
+    </Fragment>
+  </Hero>
+  <ProjectList projects={projects} oldprojects={oldProjects} />
+  <PublicationList
+    articles={journalArticles}
+    otherpublications={otherPublications}
+    conferences={conferencePresentations}
+  />
 </Layout>

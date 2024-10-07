@@ -2,14 +2,9 @@
 import Headline from '../ui/Headline.astro';
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
 
-import { Content } from "~/markdown/teaching-resources.md";
+import { Content } from '~/markdown/teaching-resources.md';
 
-const {
-    id,
-    isDark = false,
-    classes = {},
-    bg = await Astro.slots.render('bg'),
-} = Astro.props;
+const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } = Astro.props;
 ---
 
 <WidgetWrapper
@@ -18,7 +13,7 @@ const {
   containerClass={`max-w-screen-xl mx-auto pt-4 ${classes?.container ?? ''}`}
   bg={bg}
 >
-    <Headline
+  <Headline
     title="Resources"
     classes={{
       container: 'mb-4 md:mb-6 mt-8',

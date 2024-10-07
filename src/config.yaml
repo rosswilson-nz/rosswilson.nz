@@ -11,7 +11,7 @@ metadata:
   title:
     default: 'Ross Wilson'
     template: '%s | Ross Wilson'
-  description: ""
+  description: ''
   robots:
     index: true
     follow: true

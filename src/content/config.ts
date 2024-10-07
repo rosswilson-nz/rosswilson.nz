@@ -67,7 +67,7 @@ const projectCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-  })
+  }),
 });
 
 const journalArticle = defineCollection({
@@ -81,8 +81,8 @@ const journalArticle = defineCollection({
     issue: z.coerce.string().optional(),
     pages: z.coerce.string().optional(),
     year: z.coerce.string(),
-    doi: z.string().optional()
-  })
+    doi: z.string().optional(),
+  }),
 });
 
 const otherPublication = defineCollection({
@@ -94,7 +94,7 @@ const otherPublication = defineCollection({
     published: z.string().optional(),
     date: z.coerce.date(),
     url: z.string().optional(),
-  })
+  }),
 });
 
 const conferencePresentation = defineCollection({
@@ -106,7 +106,7 @@ const conferencePresentation = defineCollection({
     location: z.string(),
     meetingdate: z.string(),
     type: z.string().optional(),
-  })
+  }),
 });
 
 export const collections = {

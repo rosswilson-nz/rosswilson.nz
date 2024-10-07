@@ -1,15 +1,15 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import type { CollectionEntry } from 'astro:content';
 interface Props {
-    conference: CollectionEntry<'conferences'>;
+  conference: CollectionEntry<'conferences'>;
 }
 const { conference } = Astro.props;
 ---
 
 <div class="prose prose-default max-w-none">
-    { conference.data.conference }.
-    {conference.data.location},
-    {conference.data.meetingdate}.
-    <em>{conference.data.title}</em>
-    {conference.data.type != undefined ? `[${conference.data.type}]` : ""}
+  {conference.data.conference}.
+  {conference.data.location},
+  {conference.data.meetingdate}.
+  <em>{conference.data.title}</em>
+  {conference.data.type != undefined ? `[${conference.data.type}]` : ''}
 </div>

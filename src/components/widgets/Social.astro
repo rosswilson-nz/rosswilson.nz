@@ -1,6 +1,11 @@
 ---
 const { platform, icon, url, username } = Astro.props;
 ---
-<a href={`${url}/${username}`} class="py-1 px-2 text-gray-600 border-solid border-2 rounded-lg border-gray-600 no-underline">
-    <i class=`bi bi-${icon}`></i> {platform}
+
+<a
+  href={`${url}/${username}`}
+  class="py-1 px-2 text-gray-600 border-solid border-2 rounded-lg border-gray-600 no-underline"
+>
+  <i class=`bi bi-${icon}`></i>
+  {platform}
 </a>
