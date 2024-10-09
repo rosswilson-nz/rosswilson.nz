@@ -71,12 +71,13 @@ const projectCollection = defineCollection({
 });
 
 const journalArticle = defineCollection({
-  type: 'data',
+  type: 'content',
   schema: z.object({
     title: z.string(),
     journal: z.string(),
+    shortjournal: z.string(),
     date: z.coerce.date(),
-    author: z.array(z.string()),
+    authors: z.array(z.string()),
     volume: z.coerce.string(),
     issue: z.coerce.string().optional(),
     pages: z.coerce.string().optional(),
@@ -98,7 +99,7 @@ const otherPublication = defineCollection({
 });
 
 const conferencePresentation = defineCollection({
-  type: 'data',
+  type: 'content',
   schema: z.object({
     title: z.string(),
     conference: z.string(),
@@ -109,6 +110,15 @@ const conferencePresentation = defineCollection({
   }),
 });
 
+const Authors = defineCollection({
+  type: 'data',
+  schema: z.object({
+    first: z.string(),
+    last: z.string(),
+    initials: z.string(),
+  })
+})
+
 export const collections = {
   post: postCollection,
   projects: projectCollection,
@@ -116,4 +126,5 @@ export const collections = {
   articles: journalArticle,
   'other-publications': otherPublication,
   conferences: conferencePresentation,
+  authors: Authors
 };
