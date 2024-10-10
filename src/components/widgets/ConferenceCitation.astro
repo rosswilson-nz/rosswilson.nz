@@ -6,10 +6,8 @@ interface Props {
 const { conference } = Astro.props;
 ---
 
-<div class="prose prose-default max-w-none">
-  {conference.data.conference}.
-  {conference.data.location},
-  {conference.data.meetingdate}.
-  <em>{conference.data.title}</em>
-  {conference.data.type != undefined ? `[${conference.data.type}]` : ''}
-</div>
+{conference.data.conference}.
+{conference.data.location},
+{conference.data.date.toLocaleString("en-NZ", { month: 'long', year: 'numeric' })}.
+<em>{conference.data.title}</em>
+{conference.data.type != undefined ? `[${conference.data.type}]` : ''}

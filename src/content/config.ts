@@ -87,7 +87,7 @@ const journalArticle = defineCollection({
 });
 
 const otherPublication = defineCollection({
-  type: 'data',
+  type: 'content',
   schema: z.object({
     title: z.string(),
     with: z.string().optional(),

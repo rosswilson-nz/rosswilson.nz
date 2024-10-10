@@ -15,7 +15,9 @@ const { publications } = Astro.props;
     {
       publications.map((publication) => (
         <li>
-          <OtherCitation publication={publication} />
+          <div class="prose prose-default prose-sm max-w-none">
+            <OtherCitation publication={publication} />
+          </div>
         </li>
       ))
     }

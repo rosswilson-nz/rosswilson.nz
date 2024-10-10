@@ -17,7 +17,9 @@ const { conferences } = Astro.props;
     {
       conferences.map((conference) => (
         <li>
-          <ConferenceCitation conference={conference} />
+          <div class="prose prose-default prose-sm max-w-none">
+            <ConferenceCitation conference={conference} />
+          </div>
         </li>
       ))
     }

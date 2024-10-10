@@ -10,7 +10,7 @@ const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } 
 <WidgetWrapper
   id={id}
   isDark={isDark}
-  containerClass={`max-w-screen-xl mx-auto pt-4 ${classes?.container ?? ''}`}
+  containerClass={`max-w-5xl mx-auto pt-4 ${classes?.container ?? ''}`}
   bg={bg}
 >
   <Headline
@@ -19,7 +19,7 @@ const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } 
       container: 'mb-4 md:mb-6 mt-8',
     }}
   />
-  <div class="prose prose-default max-w-none">
+  <div class="prose prose-default max-w-none prose-li:leading-none">
     <Content />
   </div>
 </WidgetWrapper>
